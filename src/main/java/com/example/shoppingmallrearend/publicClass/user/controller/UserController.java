@@ -1,8 +1,8 @@
-package com.example.shoppingmallrearend.publicClass.controller;
+package com.example.shoppingmallrearend.publicClass.user.controller;
 
 import com.example.shoppingmallrearend.configure.ResponseResult;
-import com.example.shoppingmallrearend.publicClass.entity.User;
-import com.example.shoppingmallrearend.publicClass.services.UserServicesImpl;
+import com.example.shoppingmallrearend.publicClass.user.entity.User;
+import com.example.shoppingmallrearend.publicClass.user.services.UserServicesImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +32,14 @@ public class UserController {
         int id = (int) data.get("id");
         List<User> users = userServices.queryUserById(id);
         return new ResponseResult(users);
+    }
+
+    @PostMapping("/changeUser")
+    public ResponseResult<User> changeUser(@RequestBody User user){
+
+        userServices.changeUser(user);
+        System.out.println(user);
+        return new ResponseResult(user);
     }
 
 }

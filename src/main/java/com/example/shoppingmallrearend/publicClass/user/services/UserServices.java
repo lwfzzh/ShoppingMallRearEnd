@@ -1,7 +1,7 @@
-package com.example.shoppingmallrearend.publicClass.services;
+package com.example.shoppingmallrearend.publicClass.user.services;
 
-import com.example.shoppingmallrearend.publicClass.entity.User;
-import com.example.shoppingmallrearend.publicClass.mapper.UserMapper;
+import com.example.shoppingmallrearend.publicClass.user.entity.User;
+import com.example.shoppingmallrearend.publicClass.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +20,10 @@ public class UserServices implements UserServicesImpl{
     @Override
     public List<User> queryUserById(int id) {
         return userMapper.queryUserById(id);
+    }
+
+    @Override
+    public User changeUser(User user) {
+        return userMapper.changeUser(user);
     }
 }

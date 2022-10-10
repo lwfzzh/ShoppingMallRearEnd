@@ -1,4 +1,4 @@
-package com.example.shoppingmallrearend.publicClass.entity;
+package com.example.shoppingmallrearend.publicClass.user.entity;
 
 import lombok.Data;
 

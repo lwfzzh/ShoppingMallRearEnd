@@ -1,7 +1,7 @@
-package com.example.shoppingmallrearend.publicClass.mapper;
+package com.example.shoppingmallrearend.publicClass.user.mapper;
 
 
-import com.example.shoppingmallrearend.publicClass.entity.User;
+import com.example.shoppingmallrearend.publicClass.user.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +13,6 @@ public interface UserMapper {
     int addUser(User user);
 
     List<User> queryUserById(int id);
+
+    User changeUser(User user);
 }
